@@ -1,0 +1,191 @@
+/* Global Resets */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Josefin Sans', sans-serif;
+
+    --text: hsl(0, 36%, 70%);
+    --text-other: hsl(0, 93%, 68%);
+    --solid: hsl(0, 6%, 24%);
+
+    --lin: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --line: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+    --light: 300; 
+    --normal: 400;
+    --bold: 600;
+}
+
+body {
+    height: 100vh;
+    font-size: 16px;
+    font-weight: 400;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.logo {
+    position: absolute;
+    top: 5rem;
+    left: CALC(10% + 6rem);
+    align-self: flex-start;
+}
+.logo img {
+    width: 8rem;
+}
+
+
+main {
+    display: flex;
+    height: 90%;
+    width: 80vw;
+}
+main section.texts{
+    width: 55%;
+    padding: 4rem 5.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('./images/bd-pattern-desktop.svg');
+    position: relative;
+}
+main section.texts h2 {
+    font-size: 3rem;
+    width: 50%;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 12px;
+    color: var(--solid);
+    font-weight: var(--bold);
+    align-self: flex-start;
+}
+main section.texts h2 span {
+    color: var(--text);
+    font-weight: var(--light);
+}
+main section.texts p {
+    line-height: 25px;
+    color: var(--text);
+    margin-bottom: 30px;
+    font-size: .9rem;
+    width: 90%;
+    align-self: flex-start;
+}
+main section.texts form {
+    width: 85%;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+}
+main section.texts form input {
+    border: var(--text) solid 1px;
+    border-right: none;
+    padding: 15px 20px;
+    border-radius: 5rem 0 0 5rem;
+    width: 100%;
+    background: transparent;
+}
+main section.texts form input::placeholder {
+    color: var(--text);
+}
+main section.texts form button {
+    background: var(--line);
+    width: 80px;
+    padding: 12px 20px;
+    border-radius: 0 5rem 5rem 0;
+    border: none;
+}
+main section.texts form button:hover {
+    background: var(--text);
+}
+main section.texts .warning {
+    padding: 10px 20px 0;
+    font-size: .9rem;
+    /* display: none; */
+}
+.show {
+    display: initial;
+}
+
+main section.image{
+    height: 100%;
+    width: 45%;
+}
+main section.image img{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* footer */
+.attribution { 
+    font-size: .8rem; 
+    text-align: center;
+    color: var(--text); 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%);
+    text-decoration: none; 
+}
+
+
+/* Media Queries - Responsiveness */
+/* @media only screen and (max-width: 765px) {
+    body {
+        padding: 1.5rem;
+    }
+} */
+
+@media only screen and (max-width: 576px){
+    
+    .logo {
+        position: initial;
+        padding: 2rem;
+    }
+        
+        
+    main {
+        flex-direction: column-reverse;
+        height: fit-content;
+        width: 100vw;
+    }
+
+    main section.texts{
+        height: initial;
+        padding: 50px 40px;
+        text-align: center;
+        position: initial;
+        width: initial;
+        background: var(--lin);
+    }
+    main section.texts h2 {
+        font-size: 2rem;
+        width: 100%;
+    }
+    main section.texts p {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+    main section.texts form {
+        width: 100%;
+    }
+
+    main section.image{
+        width: 100%;
+        height: 250px;
+    }
+    main section.image img{
+        width: 100%;
+        height: 100%;
+    }
+}
