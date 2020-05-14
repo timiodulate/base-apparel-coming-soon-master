@@ -34,9 +34,10 @@ body {
 
 .logo {
     position: absolute;
-    top: 5rem;
-    left: CALC(10% + 6rem);
+    top: 4rem;
+    left: 9rem;
     align-self: flex-start;
+    z-index: 12;
 }
 .logo img {
     width: 8rem;
@@ -45,17 +46,19 @@ body {
 
 main {
     display: flex;
-    height: 90%;
-    width: 80vw;
+    height: 100%;
+    margin-bottom: 10px;
 }
 main section.texts{
-    width: 55%;
-    padding: 4rem 5.5rem;
+    background: url('../images/bg-pattern-desktop.svg');
+    background-size: auto;
+    background-position: center;
+    width: 60%;
+    padding: 4rem 9rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url('./images/bd-pattern-desktop.svg');
     position: relative;
 }
 main section.texts h2 {
@@ -77,48 +80,66 @@ main section.texts p {
     color: var(--text);
     margin-bottom: 30px;
     font-size: .9rem;
-    width: 90%;
+    width: 80%;
     align-self: flex-start;
 }
 main section.texts form {
-    width: 85%;
+    width: 80%;
     align-self: flex-start;
     display: flex;
     align-items: center;
+
+    position: relative;
 }
 main section.texts form input {
-    border: var(--text) solid 1px;
+    border: hsl(0, 3%, 85%) solid 1px;
     border-right: none;
     padding: 15px 20px;
     border-radius: 5rem 0 0 5rem;
-    width: 100%;
+    width: 95%;
     background: transparent;
 }
 main section.texts form input::placeholder {
-    color: var(--text);
+    color: hsl(0, 3%, 85%);
+}
+main section.texts form .err {
+    position: absolute;
+    right: 100px;
+    display: none;
+}
+main section.texts form .show {
+    display: initial;
 }
 main section.texts form button {
     background: var(--line);
-    width: 80px;
-    padding: 12px 20px;
-    border-radius: 0 5rem 5rem 0;
+    width: 90px;
+    padding: 13px 20px;
+    border-radius: 5rem;
     border: none;
+    
+    position: absolute;
+    right: 0;
 }
+/* main section.texts form button:focus-visible {
+    border: none;
+} */
 main section.texts form button:hover {
     background: var(--text);
 }
 main section.texts .warning {
     padding: 10px 20px 0;
     font-size: .9rem;
-    /* display: none; */
+    display: none;
+    color: var(--text-other);
 }
-.show {
+main section.texts .display {
     display: initial;
 }
 
+
 main section.image{
     height: 100%;
-    width: 45%;
+    width: 40%;
 }
 main section.image img{
     width: 100%;
@@ -150,6 +171,7 @@ main section.image img{
     .logo {
         position: initial;
         padding: 2rem;
+        top: 0;
     }
         
         
@@ -178,6 +200,10 @@ main section.image img{
     }
     main section.texts form {
         width: 100%;
+    }
+    main section.texts .warning {
+        text-align: left;
+        margin-bottom: 0;
     }
 
     main section.image{

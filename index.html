@@ -28,6 +28,7 @@
       </p>
       <form action="">
         <input type="email" name="" id="email" placeholder="Email Address">
+        <img src="./images/icon-error.svg" alt="" class="err">
         <button type="submit">
           <img src="./images/icon-arrow.svg" alt="" srcset="">
         </button>
@@ -52,15 +53,27 @@
     const warning = document.querySelector('.warning');
     const submitBtn = document.querySelector('button');
     const input = document.querySelector('input');
+    const errImage = document.querySelector('.err');
 
     function warn(e) {
       e.preventDefault();
       
-      warning.classList.toggle('show');
-      // if (!input.value) {
-        // setTimeout(() => {
-        // }, 500);
-      // }
+      if (!input.validity.valid || !input.value) {
+        warning.classList.add('display');
+        errImage.classList.add('show');
+        // submitBtn.style.background = 'var(--text)';
+        input.style.border = 'var(--text-other) solid 2px';
+
+
+        console.log(input.placeholder);
+        
+        setTimeout(() => {
+          warning.classList.remove('display');
+          errImage.classList.remove('show');
+          // submitBtn.style.background = 'var(--line)';
+          input.style.border = 'hsl(0, 3%, 85%) solid 1px';
+        }, 3000);
+      }
     }
 
     submitBtn.addEventListener('submit', warn);
