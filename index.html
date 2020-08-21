@@ -1,82 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Base Apparel coming soon page</title>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
 
-  <!-- custom style  -->
-  <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-  <div class="logo">
-    <img src="./images/logo.svg" alt="" srcset="">
-  </div>
+		<title>Frontend Mentor | Base Apparel coming soon page</title>
 
-  <main>
-    <section class="texts">   
-      <h2>
-        <span>We're </span>coming soon
-      </h2>
-      
-      <p>
-        Hello fellow shoppers! We're currently building our new fashion store. 
-        Add your email below to stay up-to-date with announcements and our launch deals.
-      </p>
-      <form action="">
-        <input type="email" name="" id="email" placeholder="Email Address">
-        <img src="./images/icon-error.svg" alt="" class="err">
-        <button type="submit">
-          <img src="./images/icon-arrow.svg" alt="" srcset="">
-        </button>
-      </form>
-      <p class="warning">Please provide a valid email</p>
-    </section>
+		<!-- custom style  -->
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+	<body>
+		<div class="container">
 
-    <section class="image">
-      <img src="./images/hero-desktop.jpg" alt="" srcset="">
-    </section>
-  </main>
-  
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="https://github.com/timiodulate">timiodulate</a>.
-    </p>
-  </footer>
-</body>
+			<header class="header">
+				<img
+					class="header__logo"
+					src="./images/logo.svg"
+					alt="header__logo"
+					srcset=""
+				/>
+			</header>
+			
+			<main class="main">
+				<section class="main__image">
+				</section>
+	
+				<section class="main__texts">
+					<div>
 
-<script>
-    const warning = document.querySelector('.warning');
-    const submitBtn = document.querySelector('button');
-    const input = document.querySelector('input');
-    const errImage = document.querySelector('.err');
+						<h1 class="main__heading">
+							<span class="main__heading--brown">We're </span> 
+							<br>
+							coming
+							<br>
+							soon
+						</h1>
+		
+						<p class="main__body">
+							Hello fellow shoppers! We're currently building our new fashion store.
+							Add your email below to stay up-to-date with announcements and our
+							launch deals.
+						</p>
+						
+						<form action="" class="main__form">
+							<input type="email" name="" id="email" placeholder="Email Address" class="main__textInput"/>
+	
+							<img class="main__error_image" src="./images/icon-error.svg" alt="" class="err" />
+	
+							<button class="main__submitBtn" type="submit">
+								<img class="main__submit_image" src="./images/icon-arrow.svg" alt="" srcset="" />
+							</button>
+						</form>
+	
+						<p class="main__warning">Please provide a valid email</p>
+					</div>
+					
+					<p class="footer">
+							Challenge by
+							<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+								>
+								Frontend Mentor
+								</a
+							>. 
+							Coded by 
+							<a href="https://github.com/timiodulate">timiodulate</a>.
+					</p>
+				</section>
+			</main>
+		</div>
+	</body>
 
-    function warn(e) {
-      e.preventDefault();
-      
-      if (!input.validity.valid || !input.value) {
-        warning.classList.add('display');
-        errImage.classList.add('show');
-        // submitBtn.style.background = 'var(--text)';
-        input.style.border = 'var(--text-other) solid 2px';
+	<script>
+		const errorImage = document.querySelector(".main__error_image");
+		const submitBtn = document.querySelector(".main__submitBtn");
+		const warning = document.querySelector(".main__warning");
+		const input = document.querySelector(".main__textInput");
 
+		function warn(e) {
+			e.preventDefault();
 
-        console.log(input.placeholder);
-        
-        setTimeout(() => {
-          warning.classList.remove('display');
-          errImage.classList.remove('show');
-          // submitBtn.style.background = 'var(--line)';
-          input.style.border = 'hsl(0, 3%, 85%) solid 1px';
-        }, 3000);
-      }
-    }
+			if (!input.validity.valid || !input.value) {
+				warning.classList.add("display");
+				errorImage.classList.add("display");
+				input.classList.add("warningStyle");
 
-    submitBtn.addEventListener('submit', warn);
-    submitBtn.addEventListener('click', warn);
-</script>
+				setTimeout(() => {
+					warning.classList.remove("display");
+					errorImage.classList.remove("display");
+					input.classList.remove("warningStyle");
+				}, 3000);
+			}
+		}
+
+		submitBtn.addEventListener("submit", warn);
+		submitBtn.addEventListener("click", warn);
+	</script>
 </html>
