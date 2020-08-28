@@ -19,7 +19,6 @@
 	</head>
 	<body>
 		<div class="container">
-
 			<header class="header">
 				<img
 					class="header__logo"
@@ -28,50 +27,64 @@
 					srcset=""
 				/>
 			</header>
-			
+
 			<main class="main">
-				<section class="main__image">
-				</section>
-	
+				<section class="main__image"></section>
+
 				<section class="main__texts">
 					<div>
-
 						<h1 class="main__heading">
-							<span class="main__heading--brown">We're </span> 
-							<br>
+							<span class="main__heading--brown">We're </span>
+							<br />
 							coming
-							<br>
+							<br />
 							soon
 						</h1>
-		
+
 						<p class="main__body">
-							Hello fellow shoppers! We're currently building our new fashion store.
-							Add your email below to stay up-to-date with announcements and our
-							launch deals.
+							Hello fellow shoppers! We're currently building our new fashion
+							store. Add your email below to stay up-to-date with announcements
+							and our launch deals.
 						</p>
-						
+
 						<form action="" class="main__form">
-							<input type="email" name="" id="email" placeholder="Email Address" class="main__textInput"/>
-	
-							<img class="main__error_image" src="./images/icon-error.svg" alt="" class="err" />
-	
+							<input
+								type="email"
+								name=""
+								id="email"
+								placeholder="Email Address"
+								class="main__textInput"
+							/>
+
+							<img
+								class="main__error_image"
+								src="./images/icon-error.svg"
+								alt=""
+								class="err"
+							/>
+
 							<button class="main__submitBtn" type="submit">
-								<img class="main__submit_image" src="./images/icon-arrow.svg" alt="" srcset="" />
+								<img
+									class="main__submit_image"
+									src="./images/icon-arrow.svg"
+									alt=""
+									srcset=""
+								/>
 							</button>
 						</form>
-	
+
 						<p class="main__warning">Please provide a valid email</p>
 					</div>
-					
+
 					<p class="footer">
-							Challenge by
-							<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-								>
-								Frontend Mentor
-								</a
-							>. 
-							Coded by 
-							<a href="https://github.com/timiodulate">timiodulate</a>.
+						Challenge by
+						<a
+							href="https://www.frontendmentor.io?ref=challenge"
+							target="_blank"
+						>
+							Frontend Mentor </a
+						>. Coded by
+						<a href="https://github.com/timiodulate">timiodulate</a>.
 					</p>
 				</section>
 			</main>
@@ -91,11 +104,13 @@
 				warning.classList.add("display");
 				errorImage.classList.add("display");
 				input.classList.add("warningStyle");
+				submitBtn.classList.add("dangerStyle");
 
 				setTimeout(() => {
 					warning.classList.remove("display");
 					errorImage.classList.remove("display");
 					input.classList.remove("warningStyle");
+					submitBtn.classList.remove("dangerStyle");
 				}, 3000);
 			}
 		}

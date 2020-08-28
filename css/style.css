@@ -154,6 +154,9 @@ a {
     border: var(--Soft-Red) solid 1px;
     opacity: 1;
 }
+.dangerStyle{
+    background: var(--Soft-Red)
+}
 
 .footer {
     text-align: center;
